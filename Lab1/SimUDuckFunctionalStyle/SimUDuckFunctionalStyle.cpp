@@ -20,10 +20,9 @@ void DanceNoWay() {};
 using FlyBehavior = function<void()>;
 void FlyWithWings()
 {
-	int m_departuresNumber = 1;
-	cout << "I'm flying with wings!!" << " my flight number is " << m_departuresNumber << endl;
-	m_departuresNumber++;
-}
+	cout << "I'm flying with wings!!" << endl;
+	
+}//callback
 void FlyNoWay() {}
 
 using QuackBehavior = function<void()>;
@@ -39,14 +38,15 @@ void MuteQuack() {}
 
 class Duck
 {
-public:
+public://проверку на Null
 	Duck(const FlyBehavior& flyBehavior,
 		const QuackBehavior& quackBehavior,
 		const DanceBehavior& danceBehavior)
-		:m_flyBehavior(flyBehavior),
-		m_quackBehavior(quackBehavior),
-		m_danceBehavior(danceBehavior)
-	{}
+	{
+		SetFlyBehavior(flyBehavior);
+		SetQuackBehavior(quackBehavior);
+		SetDanceBehavior(danceBehavior);
+	}
 	void Quack() const
 	{
 		m_quackBehavior();
@@ -63,12 +63,19 @@ public:
 	{
 		m_danceBehavior();
 	}
+	void SetQuackBehavior(const QuackBehavior& quackBehavior)
+	{
+		assert(quackBehavior);
+		m_quackBehavior = quackBehavior;
+	}
 	void SetFlyBehavior(const FlyBehavior& flyBehavior)
 	{
+		assert(flyBehavior);
 		m_flyBehavior = flyBehavior;
 	}
 	void SetDanceBehavior(const DanceBehavior& danceBehavior)
 	{
+		assert(danceBehavior);
 		m_danceBehavior = danceBehavior;
 	}
 	virtual void Display() const = 0;
@@ -165,11 +172,6 @@ void PlayWithDuck(Duck& duck)
 int main()
 {
 	MallardDuck mallardDuck;
-	PlayWithDuck(mallardDuck);
-	PlayWithDuck(mallardDuck);
-	mallardDuck.SetFlyBehavior(FlyNoWay);
-	PlayWithDuck(mallardDuck);
-	mallardDuck.SetFlyBehavior(FlyWithWings);
 	PlayWithDuck(mallardDuck);
 
 	RedheadDuck redheadDuck;

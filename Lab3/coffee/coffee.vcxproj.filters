@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Beverages">
+      <UniqueIdentifier>{5965ff0e-1e2a-4d4c-8a71-914fdd8baf0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Condiments">
+      <UniqueIdentifier>{a8461cca-b7c8-4e08-9eb2-b86f29702ea4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Beverages\Coffees">
+      <UniqueIdentifier>{d306fc99-94c9-4329-92a1-77bb88edb2c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Beverages\Teas">
+      <UniqueIdentifier>{dedeee86-3b25-4247-8c35-3288bb3955f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CBeverage.h">
+      <Filter>Header Files\Beverages</Filter>
+    </ClInclude>
+    <ClInclude Include="CMilkshake.h">
+      <Filter>Header Files\Beverages</Filter>
+    </ClInclude>
+    <ClInclude Include="IBeverage.h">
+      <Filter>Header Files\Beverages</Filter>
+    </ClInclude>
+    <ClInclude Include="CCondimentDecorator.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CCinnamon.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CLemon.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CIceCubes.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyrup.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CChocolateCrumbs.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoconutFlakes.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CCappuccino.h">
+      <Filter>Header Files\Beverages\Coffees</Filter>
+    </ClInclude>
+    <ClInclude Include="CCappuccinoDouble.h">
+      <Filter>Header Files\Beverages\Coffees</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoffee.h">
+      <Filter>Header Files\Beverages\Coffees</Filter>
+    </ClInclude>
+    <ClInclude Include="CLatte.h">
+      <Filter>Header Files\Beverages\Coffees</Filter>
+    </ClInclude>
+    <ClInclude Include="CLatteDouble.h">
+      <Filter>Header Files\Beverages\Coffees</Filter>
+    </ClInclude>
+    <ClInclude Include="CGreenTea.h">
+      <Filter>Header Files\Beverages\Teas</Filter>
+    </ClInclude>
+    <ClInclude Include="COolong.h">
+      <Filter>Header Files\Beverages\Teas</Filter>
+    </ClInclude>
+    <ClInclude Include="CTea.h">
+      <Filter>Header Files\Beverages\Teas</Filter>
+    </ClInclude>
+    <ClInclude Include="CWhiteTea.h">
+      <Filter>Header Files\Beverages\Teas</Filter>
+    </ClInclude>
+    <ClInclude Include="CPuer.h">
+      <Filter>Header Files\Beverages\Teas</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCream.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CChocolate.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+    <ClInclude Include="CLiquor.h">
+      <Filter>Header Files\Condiments</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

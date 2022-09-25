@@ -4,13 +4,14 @@
 #include <vector>
 
 using namespace std;
-
+//TODO Разбить 
 struct IDanceBehavior
 {
 	virtual ~IDanceBehavior() {};
 	virtual void Dance() = 0;
 };
-
+//почему структура
+//в структуре все public и структура передается по значению(классы по сслыке)
 class DanceWaltz : public IDanceBehavior
 {
 	void Dance() override
@@ -43,12 +44,11 @@ class FlyWithWings : public IFlyBehavior
 public:
 	void Fly() override
 	{
-		m_departuresNumber++;
-		cout << "I'm flying with wings!!" << " my flight number is " << m_departuresNumber << endl;
-
+		m_flightNumber++;
+		cout << "I'm flying with wings!!" << " my flight number is " << m_flightNumber << endl;
 	}
 private:
-	int m_departuresNumber = 0;
+	int m_flightNumber = 0;
 };
 
 class FlyNoWay : public IFlyBehavior
@@ -89,31 +89,40 @@ public:
 
 class Duck
 {
+/*
+Unique_ptr не имеет общего указателя. Его нельзя скопировать в другую unique_ptr,
+передать по значению в функцию или использовать в любом алгоритме стандартной библиотеки C++,
+который требует создания копий. unique_ptr можно только переместить.
+*/
 public:
 	Duck(unique_ptr<IFlyBehavior>&& flyBehavior,
 		unique_ptr<IQuackBehavior>&& quackBehavior,
 		unique_ptr<IDanceBehavior>&& danceBehavior)
-		: m_quackBehavior(move(quackBehavior))
 	{
-		assert(m_quackBehavior);
 		SetFlyBehavior(move(flyBehavior));
+		SetQuackBehavior(move(quackBehavior));
 		SetDanceBehavior(move(danceBehavior));
-	}
+	}//добавить смену повидения кряканья
 	void Quack() const
 	{
 		m_quackBehavior->Quack();
 	}
-	void Swim()
+	void Swim() const
 	{
 		cout << "I'm swimming" << endl;
 	}
-	void Fly()
+	void Fly() const
 	{
 		m_flyBehavior->Fly();
 	}
-	virtual void Dance()
+	virtual void Dance() const
 	{
 		m_danceBehavior->Dance();
+	}
+	virtual void SetQuackBehavior(unique_ptr<IQuackBehavior>&& quackBehavior)
+	{
+		assert(quackBehavior);
+		m_quackBehavior = move(quackBehavior);
 	}
 	virtual void SetDanceBehavior(unique_ptr<IDanceBehavior>&& danceBehavior)
 	{
